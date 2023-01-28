@@ -1,8 +1,8 @@
-.carousel-iner {
+.carousel-inner {
     height: 700px;
 }
 
-.carousel-iner .carousel-item img {
+.carousel-inner .carousel-item img {
     height: 700px;
     object-fit: cover;
 }
