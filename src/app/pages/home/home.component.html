@@ -3,7 +3,7 @@
 <div class="contain-fluid">
     <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000"
+            <div class="carousel-item" data-bs-interval="10000"
                 *ngFor="let bannerMovie of bannerMovies; let i=index" [ngClass]="{active:i===1}">
                 <img src="https://image.tmdb.org/t/p/original/{{ bannerMovie.backdrop_path }}" class="d-block w-100"
                     alt="..." routerLink="['movie',bannerMovie.id]">
