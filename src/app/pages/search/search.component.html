@@ -16,7 +16,7 @@
                 <div class="col-lg-3 mt-3 mb-3">
                     <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}"
                     class="rowing largeposter"
-                    routerLink="['movie',movie.id]">
+                    [routerLink]="['/movie',movie.id]">
                 </div>
                 <div class="col-lg-9 mt-4 mb-4">
                    <h5>{{ movie.original_title }}</h5>

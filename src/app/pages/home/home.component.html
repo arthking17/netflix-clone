@@ -6,7 +6,7 @@
             <div class="carousel-item" data-bs-interval="10000"
                 *ngFor="let bannerMovie of bannerMovies; let i=index" [ngClass]="{active:i===1}">
                 <img src="https://image.tmdb.org/t/p/original/{{ bannerMovie.backdrop_path }}" class="d-block w-100"
-                    alt="..." routerLink="['movie',bannerMovie.id]">
+                    alt="..." [routerLink]="['/movie',bannerMovie.id]">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>{{ bannerMovie.original_title }}</h5>
                     <p>{{ bannerMovie.overview }}</p>
@@ -35,12 +35,23 @@
 
         <div class="rowposter mt-3 p-2">
             <ng-container *ngFor="let trendingMovie of trendingMovies">
-
                 <img src="https://image.tmdb.org/t/p/original/{{ trendingMovie.poster_path }}"
-                    class="rowing largeposter" alt="..." routerLink="['movie',trendingMovie.id]">
+                    class="rowing largeposter" alt="..." [routerLink]="['/movie',trendingMovie.id]">
             </ng-container>
-
-
         </div>
     </div>
+
+    <ng-container *ngFor="let genre of movieGenres">
+        <!-- list of movies by genre -->
+        <div class="row mt-4">
+            <h5 class="text-white">{{ genre.name }} Movies</h5>
+    
+            <div class="rowposter mt-3 p-2">
+                <ng-container *ngFor="let movie of moviesByGenre[genre.id]">
+                    <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}"
+                        class="rowing" alt="..." [routerLink]="['/movie',movie.id]">
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
 </div>
