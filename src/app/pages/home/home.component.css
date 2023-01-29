@@ -43,3 +43,7 @@
 .rowposter::-webkit-scrollbar {
     display: none;
 }
+
+.smallposter{
+    max-height: 150px;
+}
