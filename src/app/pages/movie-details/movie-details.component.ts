@@ -13,6 +13,7 @@ export class MovieDetailsComponent implements OnInit {
   movieDetails: any;
   movieVideo: any;
   movieCast: any;
+  movieVideoUrl: any;
 
   ngOnInit(): void {
     let getParamId = this.router.snapshot.paramMap.get('id');
@@ -36,6 +37,7 @@ export class MovieDetailsComponent implements OnInit {
       result.results.forEach((element:any) => {
         if(element.type == "Trailer") {
           this.movieVideo = element.key;
+          this.movieVideoUrl = "https://www.youtube.com/embed/"+this.movieVideo;
           console.log(this.movieVideo, 'getMovieVideoKey#');
         }
       });

@@ -12,14 +12,19 @@ p {
     color: #ffff
 }
 
-a {
+button {
     background-color: #E50914;
     color: #ffff;
     text-decoration: none;
 }
 
-a:hover {
+button:hover {
     background-color: #E50914;
     color: #ffff;
     border: 1px solid #ffff;
+}
+
+.video-player, youtube-player {
+    width: 100%;
+    height: auto;
 }
