@@ -25,4 +25,29 @@ export class MovieApiServiceService {
     return this.http.get
     (`${environment.MovieDBAPIUrl}/search/movie?query=${data.movieName}&${environment.MovieDBAPIKeyName}=${environment.MovieDBAPIKeyValue}`);
   }
+
+  getMovieDetails(movieId: any):Observable<any> {
+    return this.http.get
+    (`${environment.MovieDBAPIUrl}/movie/${movieId}?${environment.MovieDBAPIKeyName}=${environment.MovieDBAPIKeyValue}`);
+  }
+
+  getMovieVideos(movieId: any):Observable<any> {
+    return this.http.get
+    (`${environment.MovieDBAPIUrl}/movie/${movieId}/videos?${environment.MovieDBAPIKeyName}=${environment.MovieDBAPIKeyValue}`);
+  }
+
+  getMovieCredits(movieId: any):Observable<any> {
+    return this.http.get
+    (`${environment.MovieDBAPIUrl}/movie/${movieId}/credits?${environment.MovieDBAPIKeyName}=${environment.MovieDBAPIKeyValue}`);
+  }
+
+  getListGenreMovies():Observable<any> {
+    return this.http.get
+    (`${environment.MovieDBAPIUrl}/genre/movie/list?${environment.MovieDBAPIKeyName}=${environment.MovieDBAPIKeyValue}`);
+  }
+
+  getListMoviesByGenre(movieGenreId: any):Observable<any> {
+    return this.http.get
+    (`${environment.MovieDBAPIUrl}/discover/movie?with_genres=${movieGenreId}&${environment.MovieDBAPIKeyName}=${environment.MovieDBAPIKeyValue}`);
+  }
 }
