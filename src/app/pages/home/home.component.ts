@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   //bannerData
   bannerData() {
     this.MovieDBService.bannerApiData().subscribe((result) => {
-      console.log(result, 'bannerMovies#');
+      // console.log(result, 'bannerMovies#');
       this.bannerMovies = result.results;
 
     })
@@ -34,28 +34,28 @@ export class HomeComponent implements OnInit {
 
   trendingData() {
     this.MovieDBService.trendingMovieApiData().subscribe((result) => {
-      console.log(result, 'trendingMovies#');
+      // console.log(result, 'trendingMovies#');
       this.trendingMovies = result.results;
     })
   }
 
   listMovieGenres() {
     this.MovieDBService.getListGenreMovies().subscribe((result) => {
-      console.log(result, 'listMovieGenres#');
+      // console.log(result, 'listMovieGenres#');
       this.movieGenres = result.genres;
     })
   }
 
   listMoviesByGenre(genreMovie: any) {
     return this.MovieDBService.getListMoviesByGenre(genreMovie).subscribe((result) => {
-      console.log(result, 'listMoviesByGenre#');
+      // console.log(result, 'listMoviesByGenre#');
       this.moviesByGenre = result.results;
     })
   }
 
   listAllMoviesByGenre() {
     this.MovieDBService.getListGenreMovies().subscribe((result) => {
-      console.log(result, 'listMovieGenres#');
+      // console.log(result, 'listMovieGenres#');
 
       this.movieGenres = result.genres;
 
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
 
         this.MovieDBService.getListMoviesByGenre(genre.id).subscribe((result) => {
 
-          console.log(result, `${genre.name}#`);
+          // console.log(result, `${genre.name}#`);
           this.moviesByGenre[genre.id] = result.results;
         })
       });

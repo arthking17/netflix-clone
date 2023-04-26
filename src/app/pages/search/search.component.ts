@@ -22,9 +22,9 @@ export class SearchComponent implements OnInit{
   })
 
   submitForm() {
-    console.log(this.searchForm.value, 'searchForm#');
+    // console.log(this.searchForm.value, 'searchForm#');
     this.serviceMovieApi.searchMovie(this.searchForm.value).subscribe((result) => {
-      console.log(result);
+      // console.log(result);
       this.searchResults = result.results
     })
   }
